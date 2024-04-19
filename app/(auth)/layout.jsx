@@ -1,15 +1,16 @@
 import React from 'react'
 import { Navbar } from '../components/Navbar'
-import { UserButton } from '@clerk/nextjs'
 
 function AuthLayout({children}) {
-  return (
-    <div>
-        <UserButton/>
+  return (<>
+  
         <Navbar/>
+    <div className='flex justify-center items-center h-screen'>
 
       {children}
       </div>
+  
+  </>
   )
 }
 
