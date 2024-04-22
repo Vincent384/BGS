@@ -20,18 +20,20 @@ export const Sidebar = ({}) => {
     if(inputElement){
       const clonedInput = inputElement.cloneNode(true)
       clonedInput.className = classBody
-      addInput(clonedInput,classBody)
+      addInput(clonedInput)
     }
   }
   const inputField = 'inputField'
   const classInput = 'border-2 ml-2'
 
   return (
-    <div className='h-[400px] border-black w-[350px'>
+    <div className='h-[400px] border-black w-[350px] m-2 mt-5'>
       <div className='border-2'>
         <h1 className='text-lg m-2'>Input Field</h1>
         <input id={inputField} className={classInput} type="text"/>
-        <button onClick={() => AddInputClick(inputField,classInput)}>Add</button>
+        <button className='py-2 px-4 bg-slate-400 rounded-md text-white m-2
+         hover:bg-slate-500 transition-colors' 
+        onClick={() => AddInputClick(inputField,classInput)}>Add</button>
       </div>
       <div onClick={() => handleClick(1)} className={`h-1/2 border-slate-400 ${isActive === 1 ? 'border-4' : 'border-2'}`}>
         sidbar

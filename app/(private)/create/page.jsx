@@ -1,34 +1,31 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Sidebar } from '../_component/Sidebar'
-import { InputProvider, useInputContext } from '@/app/context/InputProvider'
+import { CreateInput } from '../_component/CreateInput'
+import { Button } from '@/app/components/Button'
 
 const CreatePage = () => {
 
-  const { inputs } = useInputContext()
+ 
 
   return (
  
-    
-      <div className='flex'>
+    <div>
+      <div className='flex '>
         <div>
             <Sidebar/>
         </div>
-        <div className='flex col-span-1'>
-          {inputs.map((input, index) => (
-            <div key={index}>
-              <input 
-              type={input.type}
-              className={input.className}
-              />
-            </div>
-          ))}
-
+        <div className='flex justify-center border-2 border-slate-300 
+        items-center w-full m-5 overflow-hidden overflow-y-auto'>
+          <CreateInput/>
         </div>
-          <div>
-            createpage
-          </div>
       </div>
+      <div className='flex justify-end mr-10'>
+          <div>
+            <Button bgColor={'bg-green-500'} textColor={'text-white'} name={'Save'}/>
+          </div>
+        </div>
+    </div>
     
     
     

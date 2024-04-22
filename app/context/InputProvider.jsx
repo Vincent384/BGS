@@ -7,14 +7,9 @@ export const useInputContext = () => useContext(InputContext);
 export const InputProvider = ({ children }) => {
   const [inputs, setInputs] = useState([]);
 
-  const addInput = (inputElement,classBody) => {
-    if (inputElement && classBody) {
-      const clonedInput = inputElement.cloneNode(true);
-      const inputAttributes = {
-        type:clonedInput.type,
-        className:classBody
-      }
-          setInputs((prevInputs)=>[...prevInputs,inputAttributes])
+  const addInput = (inputElement) => {
+    if (inputElement) {
+          setInputs((prevInputs)=>[...prevInputs,inputElement])
     }
   };
 

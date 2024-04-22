@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 const DashBoard = () => {
   return (
     <main>
-        <div>Dashboard</div>
+        <div>
+            
+        </div>
     </main>
   )
 }
