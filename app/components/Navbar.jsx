@@ -5,12 +5,12 @@ import { Navlinks } from './navlink-links'
 import { Button } from './Button'
 import { useRouter } from 'next/router'
 import { UserButton } from '@clerk/nextjs'
+import { usePathname } from 'next/navigation'
 
 
 export const Navbar = ({  }) => {
     
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-
 
 
   return (
@@ -23,9 +23,11 @@ export const Navbar = ({  }) => {
                isLoggedIn ? <Navlinks/> :''
             }
             <div className='flex justify-center items-center gap-6'>
+         
             <UserButton afterSignOutUrl='/'/>
+            
             <Link href='/create'>Create</Link>
-            <Link href='/create'>Dashboard</Link>
+            <Link href='/dashboard'>Dashboard</Link>
             </div>
              <Link href='/sign-in'>
             <Button
